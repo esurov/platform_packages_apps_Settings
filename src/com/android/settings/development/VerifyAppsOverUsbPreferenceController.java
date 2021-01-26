@@ -140,17 +140,6 @@ public class VerifyAppsOverUsbPreferenceController extends DeveloperOptionsPrefe
      * should be disabled.
      */
     private boolean shouldBeEnabled() {
-        final ContentResolver cr = mContext.getContentResolver();
-        if (Settings.Global.getInt(cr, Settings.Global.ADB_ENABLED,
-                AdbPreferenceController.ADB_SETTING_OFF)
-                == AdbPreferenceController.ADB_SETTING_OFF) {
-            return false;
-        }
-        final Intent verification = new Intent(Intent.ACTION_PACKAGE_NEEDS_VERIFICATION);
-        verification.setType(PACKAGE_MIME_TYPE);
-        verification.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        final List<ResolveInfo> receivers = mPackageManager.queryBroadcastReceivers(
-                verification, 0 /* flags */);
-        return !receivers.isEmpty();
+	return false;
     }
 }
