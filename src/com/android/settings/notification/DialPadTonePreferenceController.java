@@ -33,7 +33,7 @@ public class DialPadTonePreferenceController extends SettingPrefController {
             Lifecycle lifecycle) {
         super(context, parent, lifecycle);
         mPreference = new SettingPref(
-            TYPE_SYSTEM, KEY_DIAL_PAD_TONES, System.DTMF_TONE_WHEN_DIALING, DEFAULT_ON) {
+            TYPE_SYSTEM, KEY_DIAL_PAD_TONES, System.DTMF_TONE_WHEN_DIALING, 0) {
             @Override
             public boolean isApplicable(Context context) {
                 return Utils.isVoiceCapable(context);
